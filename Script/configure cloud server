@@ -1,0 +1,15 @@
+#!/bin/bash
+
+# Update the package list and install necessary software
+sudo apt-get update
+sudo apt-get install -y apache2 mysql-server php
+
+# Open firewall ports for necessary services
+sudo ufw allow ssh
+sudo ufw allow http
+sudo ufw allow https
+sudo ufw enable
+
+# Configure web server and database
+sudo mysql_secure_installation
+sudo systemctl restart apache2
