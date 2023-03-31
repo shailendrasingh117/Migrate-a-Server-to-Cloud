@@ -1,0 +1,8 @@
+#!/bin/bash
+
+# Transfer files using rsync
+rsync -avz -e "ssh -i /path/to/ssh_key.pem" /path/to/local/directory username@your.cloud.server:/path/to/remote/directory
+
+# Transfer MySQL database using mysqldump
+mysqldump -u username -p password --databases database_name > database_name.sql
+scp -i /path/to/ssh_key.pem database_name.sql username@your.cloud.server:/path/to/remote/directory
