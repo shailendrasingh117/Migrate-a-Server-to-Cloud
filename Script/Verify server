@@ -1,0 +1,7 @@
+#!/bin/bash
+
+# Check web server status
+curl http://your.cloud.server
+
+# Check MySQL status
+mysql -u username -p password -e "SHOW DATABASES;"
